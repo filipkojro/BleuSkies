@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <title>Clear Sky</title>
+
+
+</head>
+
+<body>
+    <script>
+        async function update_button_text() {
+
+            document.getElementById("button").innerHTML = "Calculation queued, this might take few minutes..." 
+        
+        }
+
+
+    </script>
+
+    <h1>Welcome to clear sky</h1>
+    <h3>Please upload you're .les or .lez file using file picker.<br>Or POST it directly to `/upload` endpoint</h3>
+    <div style="
+    display: flex;
+    flex-direction: row;
+  ">
+
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input name="file" type="file" multiple>
+            <button type="submit" id="button" onclick="update_button_text()">Upload</button>
+            
+        </form>
+    </div>
+
+</body>
+
+</html>
